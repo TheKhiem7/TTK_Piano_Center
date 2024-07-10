@@ -1,41 +1,34 @@
-package Khiemnvd.controller;
+package Khiemnvd.controller.user;
 
-import Khiemnvd.registration.RegistrationDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.sql.SQLException;
 import javax.servlet.ServletException;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
  * @author TheKhiem7
  */
-public class DeleteController extends HttpServlet {
-    private final String DELETEERRPAGE = "DeleteErr.html";
+public class LogoutController extends HttpServlet {
+
+    private final String LOGINPAGE = "index.jsp";
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
-            String url = DELETEERRPAGE;
-            String username = request.getParameter("pk");
-            String searchValue = request.getParameter("lastSearchValue");
-
-            try {
-                RegistrationDAO dao = new RegistrationDAO();
-                boolean result = dao.deleteRecord(username);
-                if (result) {
-                    url = "MainController?btAction=Search&txtSearchValue=" + searchValue;
-                }
-            } catch (SQLException e) {
-                e.printStackTrace();
-            } finally {
-                response.sendRedirect(url);
+            String url = LOGINPAGE;
+            // Invalidate the session if it exists
+            HttpSession session = request.getSession(false);
+            if (session != null) {
+                session.invalidate();
             }
+            response.sendRedirect(url);
         }
     }
 

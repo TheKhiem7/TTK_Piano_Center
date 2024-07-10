@@ -2,11 +2,11 @@
 <web-app version="2.5" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
     <filter>
         <filter-name>AccessDenied</filter-name>
-        <filter-class>filter.AccessDenied</filter-class>
+        <filter-class>Khiemnvd.filter.AccessDenied</filter-class>
     </filter>
     <filter>
         <filter-name>AccessControl</filter-name>
-        <filter-class>filter.AccessControl</filter-class>
+        <filter-class>Khiemnvd.filter.AccessControl</filter-class>
     </filter>
     <filter-mapping>
         <filter-name>AccessControl</filter-name>
@@ -24,11 +24,11 @@
     </servlet>
     <servlet>
         <servlet-name>DeleteController</servlet-name>
-        <servlet-class>Khiemnvd.controller.DeleteController</servlet-class>
+        <servlet-class>Khiemnvd.controller.user.DeleteController</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>LoginController</servlet-name>
-        <servlet-class>Khiemnvd.controller.LoginController</servlet-class>
+        <servlet-class>Khiemnvd.controller.user.LoginController</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>MainController</servlet-name>
@@ -60,11 +60,11 @@
     </servlet>
     <servlet>
         <servlet-name>LogoutController</servlet-name>
-        <servlet-class>Khiemnvd.controller.LogoutController</servlet-class>
+        <servlet-class>Khiemnvd.controller.user.LogoutController</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>CourseController</servlet-name>
-        <servlet-class>Khiemnvd.controller.CourseController</servlet-class>
+        <servlet-class>Khiemnvd.controller.courses.CourseController</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>Course</servlet-name>
@@ -72,7 +72,7 @@
     </servlet>
     <servlet>
         <servlet-name>CreateCourseServlet</servlet-name>
-        <servlet-class>Khiemnvd.controller.CreateCourseServlet</servlet-class>
+        <servlet-class>Khiemnvd.controller.courses.CreateCourse</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>UpdateCourse</servlet-name>

@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package dal;
+package Khiemnvd.dal;
 
 import Khiemnvd.database.DBUtils;
 import java.sql.Connection;
@@ -14,7 +14,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import model.Category;
+import Khiemnvd.model.Category;
 
 /**
  *

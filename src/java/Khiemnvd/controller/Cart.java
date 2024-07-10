@@ -5,7 +5,7 @@
  */
 package Khiemnvd.controller;
 
-import dal.OrderDAO;
+import Khiemnvd.dal.OrderDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
@@ -14,10 +14,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import model.Order;
-import model.OrderDetail;
-import model.Pagination;
-import model.Registration;
+import Khiemnvd.model.Order;
+import Khiemnvd.model.OrderDetail;
+import Khiemnvd.model.Pagination;
+import Khiemnvd.model.Registration;
 
 /**
  *

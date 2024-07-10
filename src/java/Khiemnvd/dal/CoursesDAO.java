@@ -3,8 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package dal;
+package Khiemnvd.dal;
 
+import Khiemnvd.model.Course;
+import Khiemnvd.model.Pagination;
+import Khiemnvd.model.Category;
 import Khiemnvd.database.DBUtils;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -15,7 +18,6 @@ import java.util.List;
 import java.util.Vector;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import model.*;
 
 /**
  *

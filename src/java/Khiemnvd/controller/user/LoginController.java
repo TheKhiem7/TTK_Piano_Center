@@ -1,4 +1,4 @@
-package Khiemnvd.controller;
+package Khiemnvd.controller.user;
 
 import Khiemnvd.registration.RegistrationDAO;
 import java.io.IOException;
@@ -9,7 +9,7 @@ import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import model.Registration;
+import Khiemnvd.model.Registration;
 
 /**
  *

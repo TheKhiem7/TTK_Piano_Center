@@ -1,6 +1,6 @@
-package Khiemnvd.controller;
+package Khiemnvd.controller.courses;
 
-import dal.CoursesDAO;
+import Khiemnvd.dal.CoursesDAO;
 import java.io.IOException;
 import java.util.List;
 import javax.servlet.ServletException;
@@ -8,8 +8,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import model.Course;
-import model.Pagination;
+import Khiemnvd.model.Course;
+import Khiemnvd.model.Pagination;
 
 public class CourseController extends HttpServlet {
 

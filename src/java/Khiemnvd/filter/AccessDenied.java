@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package filter;
+package Khiemnvd.filter;
 
 import java.io.IOException;
 import java.io.PrintStream;
@@ -17,13 +17,13 @@ import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
-import model.Registration;
+import Khiemnvd.model.Registration;
 
 /**
  *
  * @author Admin
  */
-public class AccessControl implements Filter {
+public class AccessDenied implements Filter {
     
     private static final boolean debug = true;
 
@@ -32,13 +32,13 @@ public class AccessControl implements Filter {
     // configured. 
     private FilterConfig filterConfig = null;
     
-    public AccessControl() {
+    public AccessDenied() {
     }    
     
     private void doBeforeProcessing(ServletRequest request, ServletResponse response)
             throws IOException, ServletException {
         if (debug) {
-            log("AccessControl:DoBeforeProcessing");
+            log("AccessDenied:DoBeforeProcessing");
         }
 
         // Write code here to process the request and/or response before
@@ -66,7 +66,7 @@ public class AccessControl implements Filter {
     private void doAfterProcessing(ServletRequest request, ServletResponse response)
             throws IOException, ServletException {
         if (debug) {
-            log("AccessControl:DoAfterProcessing");
+            log("AccessDenied:DoAfterProcessing");
         }
 
         // Write code here to process the request and/or response after
@@ -102,7 +102,7 @@ public class AccessControl implements Filter {
             throws IOException, ServletException {
         
         if (debug) {
-            log("AccessControl:doFilter()");
+            log("AccessDenied:doFilter()");
         }
         
         doBeforeProcessing(request, response);
@@ -110,13 +110,9 @@ public class AccessControl implements Filter {
         HttpSession session = req.getSession();
         Registration u = (Registration) session.getAttribute("user");
         if (u == null) {
-            request.setAttribute("errorMessage", "Please login!");
+            request.setAttribute("errorMessage", "Something is wrong!");
             req.getRequestDispatcher("AccessDenied.jsp").forward(request, response);
             return; 
-        }
-        if (u.getIsAdmin()== 0) {
-            req.getRequestDispatcher("AccessControl.jsp").forward(request, response);
-            return;
         }
         
         Throwable problem = null;
@@ -174,7 +170,7 @@ public class AccessControl implements Filter {
         this.filterConfig = filterConfig;
         if (filterConfig != null) {
             if (debug) {                
-                log("AccessControl:Initializing filter");
+                log("AccessDenied:Initializing filter");
             }
         }
     }
@@ -185,9 +181,9 @@ public class AccessControl implements Filter {
     @Override
     public String toString() {
         if (filterConfig == null) {
-            return ("AccessControl()");
+            return ("AccessDenied()");
         }
-        StringBuffer sb = new StringBuffer("AccessControl(");
+        StringBuffer sb = new StringBuffer("AccessDenied(");
         sb.append(filterConfig);
         sb.append(")");
         return (sb.toString());

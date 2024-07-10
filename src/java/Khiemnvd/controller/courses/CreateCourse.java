@@ -3,9 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Khiemnvd.controller;
+package Khiemnvd.controller.courses;
 
-import dal.*;
+import Khiemnvd.dal.CategoryDAO;
+import Khiemnvd.dal.CoursesDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.Date;
@@ -16,13 +17,13 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import model.Category;
+import Khiemnvd.model.Category;
 
 /**
  *
  * @author Admin
  */
-public class CreateCourseServlet extends HttpServlet {
+public class CreateCourse extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
