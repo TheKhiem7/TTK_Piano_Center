@@ -1,4 +1,4 @@
-package Khiemnvd.controller;
+package Khiemnvd.controller.user;
 
 import Khiemnvd.registration.RegistrationDAO;
 import Khiemnvd.registration.RegistrationDTO;

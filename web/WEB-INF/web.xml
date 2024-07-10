@@ -20,7 +20,7 @@
     </filter-mapping>
     <servlet>
         <servlet-name>SearchController</servlet-name>
-        <servlet-class>Khiemnvd.controller.SearchController</servlet-class>
+        <servlet-class>Khiemnvd.controller.user.SearchController</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>DeleteController</servlet-name>
@@ -40,7 +40,7 @@
     </servlet>
     <servlet>
         <servlet-name>UpdateController</servlet-name>
-        <servlet-class>Khiemnvd.controller.UpdateController</servlet-class>
+        <servlet-class>Khiemnvd.controller.user.UpdateController</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>AddToCartController</servlet-name>
@@ -56,7 +56,7 @@
     </servlet>
     <servlet>
         <servlet-name>RegisterController</servlet-name>
-        <servlet-class>Khiemnvd.controller.RegisterController</servlet-class>
+        <servlet-class>Khiemnvd.controller.user.RegisterController</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>LogoutController</servlet-name>
@@ -76,7 +76,7 @@
     </servlet>
     <servlet>
         <servlet-name>UpdateCourse</servlet-name>
-        <servlet-class>Khiemnvd.controller.UpdateCourse</servlet-class>
+        <servlet-class>Khiemnvd.controller.courses.UpdateCourse</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>Cart</servlet-name>
