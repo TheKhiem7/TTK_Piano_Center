@@ -47,12 +47,33 @@
                 z-index: -1;
             }
 
+            .header{
+                height: 55px;
+            }
+            .header-bg{
+                /*                position: absolute;*/
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-image: url('img/header.png');
+                /*background-color: #efebe3;*/
+                background-size: cover;
+                /*filter: blur(8px);*/
+                z-index: -1;
+            }
+
+            .header h1{
+                text-align: center;
+            }
+
         </style>
     </head>
     <body>
-        <!--<div class="webpage-background"></div>-->
-        <div class="container">
+        <div class="header header-bg">
             <h1 class="my-4">All Piano Course in TTK Piano Music Center</h1>
+        </div>
+        <div class="container">
             <c:if test="${sessionScope.user.isAdmin == 1}">
                 <a href="createcourse" class="btn btn-primary mb-3">Create new Course</a>
             </c:if>
