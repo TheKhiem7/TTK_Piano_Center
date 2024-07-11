@@ -51,15 +51,12 @@
                 height: 55px;
             }
             .header-bg{
-                /*                position: absolute;*/
                 top: 0;
                 left: 0;
                 width: 100%;
                 height: 100%;
                 background-image: url('img/header.png');
-                /*background-color: #efebe3;*/
                 background-size: cover;
-                /*filter: blur(8px);*/
                 z-index: -1;
             }
 
