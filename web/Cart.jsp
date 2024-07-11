@@ -53,12 +53,30 @@
             .actions button:hover {
                 background-color: #0056b3;
             }
+
+            .header{
+                height: 55px;
+            }
+            .header-bg{
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-image: url('img/header.png');
+                background-size: cover;
+                z-index: -1;
+            }
+
+            .header h1{
+                text-align: center;
+            }
         </style>
     </head>
     <body>
         <div class="container">
-            <h1>Order History for User ID: ${userId}</h1>
-
+            <div class="header header-bg">
+                <h1 class="my-4">Order list of User: ${userId}</h1>
+            </div>
             <c:choose>
                 <c:when test="${not empty orders}">
                     <table>
