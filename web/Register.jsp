@@ -188,62 +188,71 @@
     <body>
         <div class="webpage-background"></div>
         <div class="container">
-        <div class="heading">Create new account</div>
-        <form class="form" action="MainController">
-            <input class="input" type="text" name="txtUsername" value="<%= request.getParameter("txtUsername")%>" placeholder="Username (6-20 char)"/> 
+            <div class="heading">Create new account</div>
+
             <%
-                RegistrationInsertError errors = (RegistrationInsertError) request.getAttribute("INSERTERRORS");
-                if (errors != null) {
-                    if (errors.getUsernameLengthErr() != null) {
-            %>
-            <font color="red"><%= errors.getUsernameLengthErr()%> </font>
-            <%
-                    }
+                String message = (String) request.getAttribute("MESSAGE");
+                if (message == null) {
+                    message = "";
                 }
             %>
-            <%
-                if (errors != null) {
-                    if (errors.getUsernameExisted() != null) {
-            %>
-            <font color="red"><%= errors.getUsernameExisted()%> </font>
-            <%
+            <%=message%>
+
+            <form class="form" action="MainController">
+                <input class="input" type="text" name="txtUsername" value="<%= request.getParameter("txtUsername")%>" placeholder="Username (6-20 char)"/> 
+                <%
+                    RegistrationInsertError errors = (RegistrationInsertError) request.getAttribute("INSERTERRORS");
+                    if (errors != null) {
+                        if (errors.getUsernameLengthErr() != null) {
+                %>
+                <font color="red"><%= errors.getUsernameLengthErr()%> </font>
+                <%
+                        }
                     }
-                }
-            %><br>         
-            <input class="input" type="password" name="txtPassword" value="" placeholder="Password(*)(6-20 char)" /> 
-            <%
-                if (errors != null) {
-                    if (errors.getPasswordLengthErr() != null) {
-            %>
-            <font color="red"><%= errors.getPasswordLengthErr()%> </font>
-            <%
+                %>
+                <%
+                    if (errors != null) {
+                        if (errors.getUsernameExisted() != null) {
+                %>
+                <font color="red"><%= errors.getUsernameExisted()%> </font>
+                <%
+                        }
                     }
-                }
-            %><br>
-            <input class="input" type="password" name="txtConfirm" value="" placeholder="Confirm Password(*)(6-20 char)"/>
-            <%
-                if (errors != null) {
-                    if (errors.getConfirmPassNotMatch() != null) {
-            %>
-            <font color="red"><%= errors.getConfirmPassNotMatch()%> </font>
-            <%
+                %><br>         
+                <input class="input" type="password" name="txtPassword" value="" placeholder="Password(*)(6-20 char)" /> 
+                <%
+                    if (errors != null) {
+                        if (errors.getPasswordLengthErr() != null) {
+                %>
+                <font color="red"><%= errors.getPasswordLengthErr()%> </font>
+                <%
+                        }
                     }
-                }
-            %><br>
-            
-            <input class="input" type="text" name="txtFullname" value="<%= request.getParameter("txtFullname")%>" placeholder="Full name:(2-20 char)" /> 
-            <%
-                if (errors != null) {
-                    if (errors.getFullnameLengthErr() != null) {
-            %>
-            <font color="red"><%= errors.getFullnameLengthErr()%> </font>
-            <%
+                %><br>
+                <input class="input" type="password" name="txtConfirm" value="" placeholder="Confirm Password(*)(6-20 char)"/>
+                <%
+                    if (errors != null) {
+                        if (errors.getConfirmPassNotMatch() != null) {
+                %>
+                <font color="red"><%= errors.getConfirmPassNotMatch()%> </font>
+                <%
+                        }
                     }
-                }
-            %><br>
-            <input class="login-button" type="submit" name="btAction" value="Register" />
-            <input class="login-button" type="reset" value="Reset" /> 
-        </form>
+                %><br>
+
+                <input class="input" type="text" name="txtFullname" value="<%= request.getParameter("txtFullname")%>" placeholder="Full name:(2-20 char)" /> 
+                <%
+                    if (errors != null) {
+                        if (errors.getFullnameLengthErr() != null) {
+                %>
+                <font color="red"><%= errors.getFullnameLengthErr()%> </font>
+                <%
+                        }
+                    }
+                %><br>
+                <input class="login-button" type="submit" name="btAction" value="Register" />
+                <input class="login-button" type="reset" value="Reset" /> 
+            </form>
         </div>
     </body>
 </html>

@@ -146,26 +146,27 @@
                             <!--=============== BUTTON FOR EACH ROLE ===============-->
                             <td>
                                 <c:choose>
-                                    
-                                    <!--===== IF DON'T HAVE USER =====-->
+
+                                    <%--===== IF DON'T HAVE USER =====--%>
                                     <c:when test="${sessionScope.user == null}">
                                         <div class="d-flex flex-column">
                                             <a href="Register.html">Add to Cart</a>
-                                        </div>
+                                            <c:set var="MESSAGE" value="Please register or log in to add items to the cart" scope="session"></c:set>
+                                            </div>
                                     </c:when>
                                     
-                                    <!--===== IF USER IS ADMIN =====-->
+                                    <%--===== IF SUPER USER =====--%>
                                     <c:when test="${sessionScope.user.isAdmin == 1}">
                                         <a href="updatecourse?course_id=${c.getCourseId()}" class="btn btn-warning mb-2">Update</a>
                                     </c:when>
-                                    
-                                    <!--===== IF USER IS CUSTOMER =====-->
+
+                                    <%--===== IF USER IS CUSTOMER =====--%>
                                     <c:otherwise>
                                         <div class="d-flex flex-column">
                                             <a href="AddToCartController?course_id=${c.getCourseId()}&quantity=${c.getQuantity()}&price=${c.getTuitionfee()}" class="btn btn-primary">Add to Cart</a>
                                         </div>
                                     </c:otherwise>
-                                
+
                                 </c:choose>
                             </td>
                             <!---------------------------------------------------------------->
