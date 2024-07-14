@@ -75,7 +75,7 @@
                         </td>
                         <td>
                             <div class="tooltip-container">
-                                <span class="tooltip"><%= dto.getUsername()%></span>
+                                <span class="tooltip"><%= dto.getLastname()%></span>
                                 <span class="text"><%= dto.getUsername()%></span>
                             </div>
                         </td>

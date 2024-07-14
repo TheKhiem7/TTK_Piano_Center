@@ -372,6 +372,7 @@ body{
 }
 
 .tooltip {
+    min-width: 100px;
     position: absolute;
     top: 100%;
     left: 50%;
