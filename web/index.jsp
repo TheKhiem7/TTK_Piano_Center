@@ -189,15 +189,16 @@
         <div class="webpage-background"></div>
         <div class="container">
             <div class="heading">Sign In</div>
-                                   
+
             <form class="form" action="MainController" method="post">
                 <input class="input" type="text" name="txtUsername" id="name" placeholder="Username">
                 <input class="input" type="password" name="txtPassword" id="pw" placeholder="Password">
                 <input class="login-button" type="submit" value="Login" name="btAction">
-                <a class="login-button " href="Register.html">Create New Account</a> 
+                <a class="login-button " href="Register.html">Create New Account</a>
+                <a class="login-button" href="MainController?btAction=LogOut">LogOut</a>
 
             </form>
-            
+
             <div class="social-account-container">
                 <span class="title">Or Sign in with</span>
                 <div class="social-accounts">
