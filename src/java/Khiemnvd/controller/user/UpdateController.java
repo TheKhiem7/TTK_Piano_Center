@@ -29,6 +29,7 @@ public class UpdateController extends HttpServlet {
             String searchValue = request.getParameter("lastSearchValue");
             String admin = request.getParameter("chkAdmin");
             boolean role = false;
+//            out.println(username +  " " + password + " " + lastname + "  " + searchValue + " " + admin);
             if (admin != null) {
                 role = true;
             }

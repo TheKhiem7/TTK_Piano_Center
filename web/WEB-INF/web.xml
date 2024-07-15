@@ -44,7 +44,7 @@
     </servlet>
     <servlet>
         <servlet-name>AddToCartController</servlet-name>
-        <servlet-class>Khiemnvd.controller.AddToCartController</servlet-class>
+        <servlet-class>Khiemnvd.controller.cart.AddToCartController</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>RemoveController</servlet-name>
@@ -80,7 +80,7 @@
     </servlet>
     <servlet>
         <servlet-name>Cart</servlet-name>
-        <servlet-class>Khiemnvd.controller.Cart</servlet-class>
+        <servlet-class>Khiemnvd.controller.cart.Cart</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>SearchController</servlet-name>

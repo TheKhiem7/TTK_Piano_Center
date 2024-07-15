@@ -25,6 +25,8 @@
             %>
             <h1 class="heading" style="font-size: 40px">Welcome, <%=username%></h1>
 
+            
+            
             <%-- =============== SEARCH BOX =============== --%>
             <form class="form" action="MainController" >
                 <%
