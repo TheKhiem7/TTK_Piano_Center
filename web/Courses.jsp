@@ -75,9 +75,9 @@
         <div class="header header-bg">
             <h1 class="my-4">All Piano Course in TTK Piano Music Center</h1>
         </div>
-        <!--<div class="container">-->
+        <%--<div class="container">--%>
 
-        <!--=============== ADD COURSE BUTTON DYNAROLE ===============-->
+        <%--=============== ADD COURSE BUTTON DYNAROLE ===============--%>
         <c:if test="${sessionScope.user.isAdmin == 1}">
             <a href="createcourse" class="btn btn-primary mb-3">Create new Course</a>
         </c:if>
@@ -87,7 +87,7 @@
         </c:if>    
 
 
-        <!--=============== COURSE SEARCH BOX ===============-->
+        <%--=============== COURSE SEARCH BOX ===============--%>
         <div class="mb-3">
             <form action="CourseController" method="GET" class="form-inline">
                 <input type="hidden" name="cp" value="1">
@@ -97,7 +97,7 @@
         </div>
 
 
-        <!--=============== NO COURSE FOUND ===============-->
+        <%--=============== NO COURSE FOUND ===============--%>
         <c:if test="${empty courses}">
             <div class="alert alert-info">No courses were found with the words '${searchKey}'</div>
             <div class="text-center">
@@ -109,11 +109,11 @@
 
 
 
-        <!--=============== LISTING COURSE ===============-->
+        <%--=============== LISTING COURSE ===============--%>
         <c:if test="${not empty courses}">
             <table class="table table-bordered course-table">
 
-                <!--=============== TABLE TITLE ===============-->
+                <%--=============== TABLE TITLE ===============--%>
                 <thead class="thead-dark">
                     <tr>
                         <th>Course Name</th>
@@ -129,7 +129,7 @@
                     </tr>
                 </thead>
 
-                <!--=============== TABLE ELEMENT ===============-->
+                <%--=============== TABLE ELEMENT ===============--%>
                 <tbody>
                     <c:forEach var="c" items="${courses}">
                         <tr>
@@ -143,7 +143,7 @@
                             <td>${c.getCategory().getCategory_name()}</td>
                             <td>${c.getStatus() == 1 ? "Active" : "None"}</td>
 
-                            <!--=============== BUTTON FOR EACH ROLE ===============-->
+                            <%--=============== BUTTON FOR EACH ROLE ===============--%>
                             <td>
                                 <c:choose>
 
@@ -169,17 +169,17 @@
 
                                 </c:choose>
                             </td>
-                            <!---------------------------------------------------------------->
+                            <%-- ------------------------------------------------------------ --%>
                         </tr>
                     </c:forEach>
 
                 </tbody>
 
             </table>
-            <!--Paging -->
+            <%--Paging --%>
             <%@include file="/pagination.jsp" %>
         </c:if>
-        <!--</div>-->
+        <%--</div>--%>
     </body>
 </html>
 
