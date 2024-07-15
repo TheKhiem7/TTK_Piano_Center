@@ -84,7 +84,7 @@
                 background: linear-gradient(45deg, rgb(16, 137, 211) 0%, rgb(18, 177, 209) 100%);
                 color: white;
                 padding-block: 15px;
-                margin: 20px auto;
+                margin: 15px auto;
                 border-radius: 20px;
                 box-shadow: rgba(133, 189, 215, 0.8784313725) 0px 20px 10px -15px;
                 border: none;
@@ -196,6 +196,7 @@
                 <input class="login-button" type="submit" value="Login" name="btAction">
                 <a class="login-button " href="Register.html">Create New Account</a>
                 <a class="login-button" href="MainController?btAction=LogOut">LogOut</a>
+                <a class="login-button" href="Home.jsp">Go to Homepage</a>
 
             </form>
 

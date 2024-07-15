@@ -21,8 +21,6 @@
 
             <div class="cards-container">
 
-
-
                 <div id="UserCard" class="body">
                     <a class="card human-resources" href="Search.jsp">
                         <div class="overlay"></div>
@@ -39,10 +37,6 @@
                         <p>User Management</p>
                     </a>
                 </div>
-
-
-
-
 
                 <div id="CourseCard" class="body">
                     <a class="card education" href="CourseController">
@@ -79,11 +73,9 @@
                     </a>
                 </div>
 
-
-
-
-
             </div>
+
+            <a class="login-button" href="Home.jsp">Go to Homepage</a>
         </div>
     </body>
 </html>
