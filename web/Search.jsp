@@ -25,6 +25,7 @@
             %>
             <h1 class="heading" style="font-size: 40px">Welcome, <%=username%></h1>
 
+            <%-- =============== SEARCH BOX =============== --%>
             <form class="form" action="MainController" >
                 <%
                     String lastSearch = request.getParameter("txtSearchValue");
@@ -41,6 +42,8 @@
             </form>
         </div>
 
+
+        <%-- =============== SEARCH RESULT =============== --%>
         <div class="container">
             <%
                 String searchValue = request.getParameter("txtSearchValue");
@@ -49,6 +52,8 @@
                     if (result != null) {
             %>
             <table>
+                
+                <%-- =============== TABLE HEADER =============== --%>
                 <thead>
                     <tr class="heading" style="font-size: 25px">
                         <th>No</th>
@@ -60,31 +65,42 @@
                         <th style="color: blueviolet">Update</th>
                     </tr>
                 </thead>
+                
+                <%-- =============== TABLE ELEMENT =============== --%>
                 <tbody>
                     <%
                         int count = 0;
                         for (RegistrationDTO dto : result) {
                             String urlRewriting = "MainController?btAction=Del&pk=" + dto.getUsername() + "&lastSearchValue=" + request.getParameter("txtSearchValue");
                     %>
-
+                    
                 <form class="form" action="MainController">
 
                     <tr>
+                        <%-- =============== USER NO =============== --%>
                         <td>
                             <%= ++count%>
                         </td>
+                        
+                        <%-- =============== USERNAME =============== --%>
                         <td>
                             <div class="tooltip-container">
                                 <span class="tooltip"><%= dto.getLastname()%></span>
                                 <span class="text"><%= dto.getUsername()%></span>
                             </div>
                         </td>
+                        
+                        <%-- =============== PASSWORD =============== --%>
                         <td>
                             <input class="inp" type="text" name="txtPassword" value="<%= dto.getPassword()%>" />
                         </td>
+                        
+                        <%-- =============== LASTNAME =============== --%>
                         <td> 
                             <input class="inp" type="text" name="txtLastname" value="<%= dto.getLastname()%>" />
                         </td>
+                        
+                        <%-- =============== ROLE =============== --%>
                         <td>
                             <% if (dto.isRole()) {%>
                             <input class="ui-checkbox" type="checkbox" name="chkAdmin" value="ON" checked="checked" />
@@ -92,9 +108,13 @@
                             <input class="ui-checkbox" type="checkbox" name="chkAdmin" value="ON" />
                             <% }%>
                         </td>
+                        
+                        <%-- =============== DELETE BUTTON =============== --%>
                         <td>
                             <a class="deletebtn" href="<%= urlRewriting%>"> Delete </a>
                         </td>
+                        
+                        <%-- =============== UPDATE BUTTON =============== --%>
                         <td>
                             <input type="hidden" name="lastSearchValue" value="<%= request.getParameter("txtSearchValue")%>" />
                             <input class="updateBtn" type="submit" value="Update" name="btAction" />

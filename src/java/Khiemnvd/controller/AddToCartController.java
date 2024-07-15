@@ -4,7 +4,6 @@ import Khiemnvd.cart.CartObj;
 import Khiemnvd.dal.OrderDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.sql.SQLException;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -14,8 +13,7 @@ import Khiemnvd.model.Order;
 import Khiemnvd.model.Registration;
 
 /**
- *
- * @author TheKhiem7
+ * Servlet implementation class AddToCartController
  */
 public class AddToCartController extends HttpServlet {
 
@@ -25,7 +23,6 @@ public class AddToCartController extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
             HttpSession session = request.getSession();
             CartObj cart = (CartObj) session.getAttribute("CART");
             if (cart == null) {
@@ -38,18 +35,8 @@ public class AddToCartController extends HttpServlet {
         }
     }
 
-    // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
-    /**
-     * Handles the HTTP <code>GET</code> method.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
-    @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
+    private void handleOrder(HttpServletRequest request, HttpServletResponse response)
+            throws IOException {
         HttpSession session = request.getSession();
         Registration user = (Registration) session.getAttribute("user");
         int userId = user.getUser_id();
@@ -77,31 +64,22 @@ public class AddToCartController extends HttpServlet {
         }
 
         response.sendRedirect("cart");
-
     }
 
-    /**
-     * Handles the HTTP <code>POST</code> method.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
+    @Override
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        handleOrder(request, response);
+    }
+
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
     }
 
-    /**
-     * Returns a short description of the servlet.
-     *
-     * @return a String containing servlet description
-     */
     @Override
     public String getServletInfo() {
         return "Short description";
-    }// </editor-fold>
-
+    }
 }

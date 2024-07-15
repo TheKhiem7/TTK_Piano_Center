@@ -190,6 +190,7 @@
         <div class="container">
             <div class="heading">Create new account</div>
 
+            <%-- =============== SESSION MESSAGE =============== --%>
             <%
                 String message = (String) request.getAttribute("MESSAGE");
                 if (message == null) {
@@ -199,6 +200,8 @@
             <%=message%>
 
             <form class="form" action="MainController">
+
+                <%-- =============== USERNAME =============== --%>
                 <input class="input" type="text" name="txtUsername" value="<%= request.getParameter("txtUsername")%>" placeholder="Username (6-20 char)"/> 
                 <%
                     RegistrationInsertError errors = (RegistrationInsertError) request.getAttribute("INSERTERRORS");
@@ -218,7 +221,9 @@
                 <%
                         }
                     }
-                %><br>         
+                %><br>
+                
+                <%-- =============== PASSWORD =============== --%>
                 <input class="input" type="password" name="txtPassword" value="" placeholder="Password(*)(6-20 char)" /> 
                 <%
                     if (errors != null) {
@@ -229,6 +234,8 @@
                         }
                     }
                 %><br>
+                
+                <%-- =============== CONFIRM PASSWORD =============== --%>
                 <input class="input" type="password" name="txtConfirm" value="" placeholder="Confirm Password(*)(6-20 char)"/>
                 <%
                     if (errors != null) {
@@ -239,7 +246,8 @@
                         }
                     }
                 %><br>
-
+                
+                <%-- =============== FULLNAME =============== --%>
                 <input class="input" type="text" name="txtFullname" value="<%= request.getParameter("txtFullname")%>" placeholder="Full name:(2-20 char)" /> 
                 <%
                     if (errors != null) {
@@ -250,8 +258,11 @@
                         }
                     }
                 %><br>
+                
+                <%-- =============== BUTTON =============== --%>
                 <input class="login-button" type="submit" name="btAction" value="Register" />
                 <input class="login-button" type="reset" value="Reset" /> 
+                <a class="login-button" href="index.jsp"> Login</a>
             </form>
         </div>
     </body>
