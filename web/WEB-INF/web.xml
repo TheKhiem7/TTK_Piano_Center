@@ -18,6 +18,11 @@
         <url-pattern>/Admin.jsp</url-pattern>
         <url-pattern>/Admin</url-pattern>
     </filter-mapping>
+    <filter-mapping>
+        <filter-name>AccessDenied</filter-name>
+        <url-pattern>/Search.jsp</url-pattern>
+        <url-pattern>/Search</url-pattern>
+    </filter-mapping>
     <servlet>
         <servlet-name>SearchController</servlet-name>
         <servlet-class>Khiemnvd.controller.user.SearchController</servlet-class>
